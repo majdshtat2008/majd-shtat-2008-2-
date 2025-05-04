@@ -1,0 +1,209 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', Tahoma, Arial, sans-serif;
+    background: linear-gradient(135deg, #232526 0%, #6a11cb 50%, #2575fc 100%);
+    background-attachment: fixed;
+    direction: rtl;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.bg-animated {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 20% 30%, #fff2 0, transparent 70%),
+                radial-gradient(circle at 80% 70%, #fff1 0, transparent 70%);
+    animation: moveBg 20s linear infinite alternate;
+    opacity: 0.25;
+}
+@keyframes moveBg {
+    0% {background-position: 20% 30%, 80% 70%;}
+    100% {background-position: 30% 40%, 70% 60%;}
+}
+
+header {
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 18px;
+}
+h1 {
+    color: #fff;
+    font-size: 2.2em;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px #23252699;
+}
+.subtitle {
+    color: #e0e0e0;
+    font-size: 1.15em;
+    text-shadow: 0 1px 4px #23252677;
+    margin-bottom: 0;
+}
+
+.singers-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 38px;
+    align-items: stretch;
+}
+
+.singer-card {
+    background: rgba(34, 34, 34, 0.93);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px 0 #0003;
+    padding: 28px 18px 20px 18px;
+    max-width: 320px;
+    min-width: 260px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1 1 300px;
+}
+.singer-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 32px 0 #0005;
+}
+
+.img-glow img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    box-shadow: 0 0 18px 4px #6a11cb77, 0 0 0 4px #fff2;
+    margin-bottom: 12px;
+    object-fit: cover;
+    border: 2px solid #fff3;
+}
+
+.details {
+    margin: 10px 0 14px 0;
+    color: #e6e6e6;
+    font-size: 1em;
+    font-weight: 600;
+}
+.details span {
+    margin: 0 5px;
+    padding: 3px 10px;
+    background: #232526ee;
+    border-radius: 8px;
+    display: inline-block;
+    color: #fff;
+}
+
+.songs {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+}
+.songs li {
+    margin: 14px 0; /* فراغ واضح بين كل أغنية */
+}
+.songs a {
+    color: #2575fc;
+    background: #fff2;
+    padding: 5px 14px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+}
+.songs a:hover {
+    background: #2575fc;
+    color: #fff;
+}
+
+.yt-btn {
+    display: inline-block;
+    margin-top: auto;
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    color: #fff;
+    padding: 8px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 8px #dd247633;
+    transition: background 0.2s, transform 0.2s;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+}
+.yt-btn:hover {
+    background: linear-gradient(90deg, #dd2476, #ff512f);
+    transform: scale(1.04);
+}
+
+.about-site {
+    background: rgba(34,34,34,0.96);
+    border-radius: 16px;
+    margin: 40px auto 20px auto;
+    padding: 22px 14px;
+    max-width: 600px;
+    color: #fff;
+    box-shadow: 0 2px 12px #0002;
+    font-size: 1.08em;
+}
+.about-site h2, .about-site h3 {
+    color: #fff;
+}
+.about-site ul {
+    list-style: none;
+    padding: 0;
+}
+.about-site li {
+    margin: 8px 0;
+}
+.about-site a {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+.about-site a:hover {
+    color: #6a11cb;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    color: #f7f7fa;
+    background: rgba(34,34,34,0.97);
+    padding: 16px 0 8px 0;
+    font-size: 1em;
+    border-radius: 12px 12px 0 0;
+    margin-top: 30px;
+    box-shadow: 0 0 8px #0002;
+}
+footer a {
+    color: #ff512f;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer a:hover {
+    color: #fff;
+    text-shadow: 0 0 6px #ff512f;
+}
+
+@media (max-width: 900px) {
+    .singers-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .singer-card {
+        max-width: 98vw;
+        min-width: unset;
+    }
+    h1 {
+        font-size: 1.3em;
+    }
+    .img-glow img {
+        width: 80px;
+        height: 80px;
+    }
+}
